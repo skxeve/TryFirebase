@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dev-golang:
+    build: .
+    container_name: 'firego'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+        - .:/go/app
+    environment:
+        - "TZ=Asia/Tokyo"
+    ports:
+      - "8080:8080"
