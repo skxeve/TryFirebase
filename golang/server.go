@@ -55,7 +55,8 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		Content: "content.tmpl",
 	}
 
-	client, err := app.Auth()
+	//client, err := app.Auth(context.Background())
+	_, err = app.Auth(context.Background())
 	if err != nil {
 		page := Page{
 			Title:  "Error auth",
